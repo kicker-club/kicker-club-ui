@@ -4,6 +4,6 @@
 
 # Troubleshooting
 
-Make sure you have `webpack` and `webpack-dev-server` installed globally:
+Make sure you have `webpack`, `webpack-dev-server` and `karma-cli` installed globally:
 
-`npm i -g webpack webpack-dev-server`
+`npm i -g webpack webpack-dev-server karma-cli`

@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import kickerReducer from './reducers/kicker-reducer';
 import KickerApp from './components/KickerApp';
 
+import '../styles/bootstrap-flatly-theme.min.css';
+import '../styles/main.less';
+
 const rootReducer = combineReducers({
     kickerReducer: kickerReducer
 });
