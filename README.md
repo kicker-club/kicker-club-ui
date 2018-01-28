@@ -1,6 +1,6 @@
 # How to start the project
 
-`npm start`
+`npm run dev`
 
 # Troubleshooting
 
