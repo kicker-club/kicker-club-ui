@@ -1,7 +1,66 @@
-body {
-    background-color: antiquewhite;
+.landing-container {
+    max-width: 1440px;
+
+    > div {
+        margin: 20px;
+    }
+
+    .carousel-inner {
+        background: #2C3E50;
+        min-height: 357px;
+
+        .carousel-item {
+            padding: 20px 0 20px 0;
+        }
+
+        img {
+            margin: auto;
+        }
+
+        .carousel-caption {
+            max-width: 550px;
+            margin: auto;
+
+            p {
+                // No additional text under caption.
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .carousel-inner {
+            min-height: 200px;
+        }
+    }
+
+    .tournament-types {
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .card-text {
+            text-indent: 10px;
+        }
+    }
 }
 
-h1 {
-    color: red;
+.footer {
+    display: block;
+
+    .navbar-nav li {
+        display: inline-block;
+    }
+
+    @media screen and (max-width: 720px) {
+        .navbar-nav li {
+            display: block;
+        }
+    }
+
+    .copyright {
+        color: white;
+        font-style: italic;
+        font-size: 0.8rem;
+    }
 }
