@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Jumbotron, Button } from 'reactstrap';
-import resources from '../../resources';
 
-export default class Introduction extends React.Component {
+import resources from '../../resources';
+import * as actionCreators from '../../action-creator';
+
+class Introduction extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -14,9 +17,11 @@ export default class Introduction extends React.Component {
                 <p className="lead">{resources.intro.largeDescription}</p>
                 <p>{resources.intro.smallDescription}</p>
                 <p className="lead">
-                    <Button color="primary btn-lg">{resources.signUp}</Button>
+                    <Button onClick={this.props.switchSignUp} color="primary btn-lg">{resources.signUp}</Button>
                 </p>
             </Jumbotron>
         );
     }
 }
+
+export default connect(null, actionCreators)(Introduction);

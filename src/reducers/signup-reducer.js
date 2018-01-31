@@ -1,15 +1,15 @@
 import { Map } from 'immutable';
 
 const initialState = Map({
-    score: 0
+    signUpIsOpened: false
 });
 
 function reducer(state = initialState, action) {
     switch (action.type) {
-        case 'INCREASE':
+        case 'SWITCH_SIGNUP':
             // Here we can call the files containing business logic.
-            const previousScore = state.get('score');
-            return state.set('score', previousScore + 1)
+            const signUpIsOpened = state.get('signUpIsOpened');
+            return state.set('signUpIsOpened', !signUpIsOpened)
     }
 
     return state;

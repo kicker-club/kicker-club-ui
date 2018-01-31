@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Jumbotron } from 'reactstrap';
 
-import ReduxDemo from './ReduxDemo';
-
 class KickerApp extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -13,7 +11,6 @@ class KickerApp extends React.PureComponent {
         return (
             <div>
                 <h1>Hello Kicker Club!</h1>
-                <ReduxDemo />
                 <Jumbotron>
                     <h1 className="display-3">Reactstrap Jumbotron!</h1>
                     <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>

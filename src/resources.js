@@ -1,6 +1,7 @@
 export default {
     title: "Kicker Club",
     signUp: "Зарегистрироваться",
+    cancel: "Отмена",
     menu: {
         home: "Главная",
         contacts: "Контакты",
@@ -63,5 +64,14 @@ export default {
     footer: {
         facebookShare: "Поделиться на Facebook",
         vkShare: "Поделиться в VK",
+    },
+    signUpForm: {
+        title: 'Регистрация',
+        clubName: 'Имя Вашего клуба',
+        username: 'Ваше имя',
+        email: 'Адрес электронной почты',
+        password: 'Пароль',
+        repeatPassword: 'Повторите пароль',
+        subscribeToNews: 'Подписаться на новости о новой функциональности'
     }
 }

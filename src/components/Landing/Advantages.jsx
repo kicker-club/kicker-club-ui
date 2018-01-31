@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
     Card,
     CardImg,
@@ -8,9 +9,11 @@ import {
     CardSubtitle,
     CardDeck,
     Button } from 'reactstrap';
+
+import * as actionCreators from '../../action-creator';
 import resources from '../../resources';
 
-export default class Advantages extends React.Component {
+class Advantages extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -38,7 +41,7 @@ export default class Advantages extends React.Component {
                         <CardBody>
                             <CardTitle>{resources.advantages.accessToTournamentCard.title}</CardTitle>
                             <CardText>{resources.advantages.accessToTournamentCard.description}</CardText>
-                            <Button>{resources.signUp}</Button>
+                            <Button onClick={this.props.switchSignUp}>{resources.signUp}</Button>
                         </CardBody>
                     </Card>
                 </CardDeck>
@@ -46,3 +49,5 @@ export default class Advantages extends React.Component {
         );
     }
 }
+
+export default connect(null, actionCreators)(Advantages);
