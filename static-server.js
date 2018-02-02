@@ -8,5 +8,5 @@ app.use(express.static(__dirname + '/dist'));
 var PORT = process.env.PORT || 8081;
 
 app.listen(PORT, function () {
-    console.log(`Server is up and running. Port: ${PORT}`);
+  console.log(`Server is up and running. Port: ${PORT}`);
 });

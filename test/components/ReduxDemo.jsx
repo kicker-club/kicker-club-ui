@@ -8,22 +8,22 @@ import React from 'react';
 const should = chai.should();
 
 describe('ReduxDemo', () => {
-    it('1 + 1 = 2', () => {
-        const result = 1 + 1;
-        result.should.equal(2);
-    });
+  it('1 + 1 = 2', () => {
+    const result = 1 + 1;
+    result.should.equal(2);
+  });
 
-    xit('shallow rendering', () => {
-        const score = 10;
-        const renderer = new ShallowRenderer();
-        const expected = <h3>{score}</h3>;
+  xit('shallow rendering', () => {
+    const score = 10;
+    const renderer = new ShallowRenderer();
+    const expected = <h3>{score}</h3>;
 
-        renderer.render(<ReduxDemoPure score={score} increase={()=>{}} />);
-        const result = renderer.getRenderOutput();
+    renderer.render(<ReduxDemoPure score={score} increase={() => { }} />);
+    const result = renderer.getRenderOutput();
 
-        should.exist(result.props.children);
-        should.exist(result.props.children[1]);
-        should.equal(result.props.children[1].props.children, expected.props.children);
-        should.equal(result.props.children[1].props.type, expected.props.type);
-    });
+    should.exist(result.props.children);
+    should.exist(result.props.children[1]);
+    should.equal(result.props.children[1].props.children, expected.props.children);
+    should.equal(result.props.children[1].props.type, expected.props.type);
+  });
 });

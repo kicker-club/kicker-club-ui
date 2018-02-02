@@ -1,66 +1,66 @@
 .landing-container {
-    max-width: 1440px;
+  max-width: 1440px;
 
-    > div {
-        margin: 20px;
+  > div {
+    margin: 20px;
+  }
+
+  .carousel-inner {
+    background: #2C3E50;
+    min-height: 357px;
+
+    .carousel-item {
+      padding: 20px 0 20px 0;
     }
 
-    .carousel-inner {
-        background: #2C3E50;
-        min-height: 357px;
-
-        .carousel-item {
-            padding: 20px 0 20px 0;
-        }
-
-        img {
-            margin: auto;
-        }
-
-        .carousel-caption {
-            max-width: 550px;
-            margin: auto;
-
-            p {
-                // No additional text under caption.
-                display: none;
-            }
-        }
+    img {
+      margin: auto;
     }
 
-    @media screen and (max-width: 500px) {
-        .carousel-inner {
-            min-height: 200px;
-        }
+    .carousel-caption {
+      max-width: 550px;
+      margin: auto;
+
+      p {
+        // No additional text under caption.
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+      .carousel-inner {
+          min-height: 200px;
+      }
+  }
+
+  .tournament-types {
+    .card {
+      margin-bottom: 20px;
     }
 
-    .tournament-types {
-        .card {
-            margin-bottom: 20px;
-        }
-
-        .card-text {
-            text-indent: 10px;
-        }
+    .card-text {
+      text-indent: 10px;
     }
+  }
 }
 
 .footer {
-    display: block;
+  display: block;
 
+  .navbar-nav li {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 720px) {
     .navbar-nav li {
-        display: inline-block;
+      display: block;
     }
+  }
 
-    @media screen and (max-width: 720px) {
-        .navbar-nav li {
-            display: block;
-        }
-    }
-
-    .copyright {
-        color: white;
-        font-style: italic;
-        font-size: 0.8rem;
-    }
+  .copyright {
+    color: white;
+    font-style: italic;
+    font-size: 0.8rem;
+  }
 }

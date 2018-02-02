@@ -3,18 +3,18 @@ import { Jumbotron } from 'reactstrap';
 import resources from '../../resources';
 
 export default class HowItWorks extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div>
-                <h1 className="text-center">{resources.howItWorks.title}</h1>
-                <Jumbotron>
-                    <p className="lead">{resources.howItWorks.description}</p>
-                </Jumbotron>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <h1 className="text-center">{resources.howItWorks.title}</h1>
+        <Jumbotron>
+          <p className="lead">{resources.howItWorks.description}</p>
+        </Jumbotron>
+      </div>
+    );
+  }
 }

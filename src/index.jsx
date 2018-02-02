@@ -11,13 +11,13 @@ import '../styles/bootstrap-flatly-theme.min.css';
 import '../styles/main.less';
 
 const rootReducer = combineReducers({
-    signUpReducer
+  signUpReducer
 });
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <LandingPage />
-    </Provider>,
-    document.getElementById('kicker-app'));
+  <Provider store={store}>
+    <LandingPage />
+  </Provider>,
+  document.getElementById('kicker-app'));

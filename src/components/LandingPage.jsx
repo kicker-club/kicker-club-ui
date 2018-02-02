@@ -13,31 +13,32 @@ import SignUpModal from './SignUpModal';
 import resources from '../resources';
 
 class LandingPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div>
-                <SignUpModal />
-                <Header />
-                <div className="landing-container mx-auto">
-                    <Introduction />
-                    <Advantages />
-                    <HowItWorks />
-                    <UncontrolledCarousel items={resources.carouselImages} />
-                    <TournamentTypes />
-                    <Button onClick={this.props.switchSignUp}
-                            color="primary"
-                            className="d-block mx-auto mb-5 btn-lg">
-                        {resources.signUp}
-                    </Button>
-                </div>
-                <Footer />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <SignUpModal />
+        <Header />
+        <div className="landing-container mx-auto">
+          <Introduction />
+          <Advantages />
+          <HowItWorks />
+          <UncontrolledCarousel items={resources.carouselImages} />
+          <TournamentTypes />
+          <Button
+            onClick={this.props.switchSignUp}
+            color="primary"
+            className="d-block mx-auto mb-5 btn-lg">
+            {resources.signUp}
+          </Button>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export { LandingPage as LandingPagePure };

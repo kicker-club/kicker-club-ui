@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -17,8 +17,8 @@ module.exports = function(config) {
       'test/index.js': ['webpack']
     },
     // Webpack preprocessor always use webpack-dev-middleware (it's not needed to install)
-    // You can specify here another webpack configuration. 
-    // Entry section is not used. No real path in output section is required. 
+    // You can specify here another webpack configuration.
+    // Entry section is not used. No real path in output section is required.
     webpack: require('./webpack.config.js'),
     webpackMiddleware: {
       noInfo: true
