@@ -14,7 +14,7 @@ import {
 import * as actionCreators from '../../action-creator';
 import resources from '../../resources';
 
-class Advantages extends React.Component {
+export class Advantages extends React.Component {
   constructor(props) {
     super(props);
   }

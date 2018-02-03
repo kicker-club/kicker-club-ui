@@ -4,7 +4,7 @@ const initialState = Map({
   signUpIsOpened: false
 });
 
-function reducer(state = initialState, action) {
+function signUpReducer(state = initialState, action) {
   switch (action.type) {
     case 'SWITCH_SIGNUP':
       // Here we can call the files containing business logic.
@@ -15,4 +15,4 @@ function reducer(state = initialState, action) {
   return state;
 }
 
-export default reducer;
+export default signUpReducer;

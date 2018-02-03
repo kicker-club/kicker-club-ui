@@ -12,7 +12,7 @@ import Footer from './Landing/Footer';
 import SignUpModal from './SignUpModal';
 import resources from '../resources';
 
-class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -41,5 +41,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export { LandingPage as LandingPagePure };
 export default connect(null, actionCreators)(LandingPage);

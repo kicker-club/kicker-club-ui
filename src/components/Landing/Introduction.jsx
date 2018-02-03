@@ -5,7 +5,7 @@ import { Jumbotron, Button } from 'reactstrap';
 import resources from '../../resources';
 import * as actionCreators from '../../action-creator';
 
-class Introduction extends React.Component {
+export class Introduction extends React.Component {
   constructor(props) {
     super(props);
   }

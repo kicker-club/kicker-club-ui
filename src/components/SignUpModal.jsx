@@ -18,7 +18,7 @@ const propTypes = {
   switchSignUp: PropTypes.func.isRequired
 };
 
-class SignUpModal extends React.Component {
+export class SignUpModal extends React.Component {
   constructor(props) {
     super(props);
   }
