@@ -15,10 +15,11 @@ import SignInForm from './SignInForm';
 
 const propTypes = {
   signInIsOpened: PropTypes.bool.isRequired,
-  switchSignIn: PropTypes.func.isRequired
+  signIn: PropTypes.func.isRequired,
+  toggleSignInForm: PropTypes.func.isRequired
 };
 
-export class SignInModal extends React.Component {
+export class SignInModal extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -28,15 +29,15 @@ export class SignInModal extends React.Component {
       <div>
         <Modal
           isOpen={this.props.signInIsOpened}
-          toggle={this.props.switchSignIn}
+          toggle={this.props.toggleSignInForm}
           size="lg">
-          <ModalHeader toggle={this.props.switchSignIn}>{resources.signInForm.title}</ModalHeader>
+          <ModalHeader toggle={this.props.toggleSignInForm}>{resources.signInForm.title}</ModalHeader>
           <ModalBody>
             <SignInForm />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.props.switchSignIn}>{resources.signIn}</Button>
-            <Button color="secondary" onClick={this.props.switchSignIn}>{resources.cancel}</Button>
+            <Button color="primary" onClick={this.props.signIn}>{resources.signIn}</Button>
+            <Button color="secondary" onClick={this.props.toggleSignInForm}>{resources.cancel}</Button>
           </ModalFooter>
         </Modal>
       </div>

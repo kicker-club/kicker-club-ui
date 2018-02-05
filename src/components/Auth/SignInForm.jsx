@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Form,
@@ -11,7 +12,16 @@ import {
 import * as actionCreators from 'actions';
 import resources from 'resources';
 
-export class SignInForm extends React.Component {
+const propTypes = {
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  rememberMe: PropTypes.bool.isRequired,
+  changeEmail: PropTypes.func.isRequired,
+  changePassword: PropTypes.func.isRequired,
+  changeRememberMe: PropTypes.func.isRequired
+};
+
+export class SignInForm extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -22,13 +32,24 @@ export class SignInForm extends React.Component {
         <FormGroup row>
           <Label sm={2} for="email">{resources.signInForm.email}</Label>
           <Col sm={10}>
-            <Input type="email" name="email" id="email" placeholder="me@example.com" />
+            <Input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="me@example.com"
+              value={this.props.email}
+              onChange={(event) => this.props.changeEmail(event.target.value)} />
           </Col>
         </FormGroup>
         <FormGroup row>
           <Label sm={2} for="password">{resources.signInForm.password}</Label>
           <Col sm={10}>
-            <Input type="password" name="password" id="password" />
+            <Input
+              type="password"
+              name="password"
+              id="password"
+              value={this.props.password}
+              onChange={(event) => this.props.changePassword(event.target.value)} />
           </Col>
         </FormGroup>
         <FormGroup check>
@@ -36,7 +57,7 @@ export class SignInForm extends React.Component {
             <Input
               type="checkbox"
               checked={this.props.rememberMe}
-              onChange={this.props.clickRememberMe} />
+              onChange={this.props.changeRememberMe} />
             {resources.signInForm.rememberMe}
           </Label>
         </FormGroup>
@@ -45,9 +66,13 @@ export class SignInForm extends React.Component {
   }
 }
 
+SignInForm.propTypes = propTypes;
+
 function mapStateToProps(state) {
   const rememberMe = state.authReducer.get('rememberMe');
-  return { rememberMe };
+  const email = state.authReducer.get('email');
+  const password = state.authReducer.get('password');
+  return { rememberMe, email, password };
 }
 
 export default connect(mapStateToProps, actionCreators)(SignInForm);

@@ -15,7 +15,7 @@ import {
 import * as actionCreators from 'actions';
 import resources from 'resources';
 
-export class Footer extends React.Component {
+export class Footer extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -46,7 +46,7 @@ export class Footer extends React.Component {
                   <NavItem>
                     <NavLink
                       role="button"
-                      onClick={this.props.switchSignIn}
+                      onClick={this.props.toggleSignInForm}
                       className="cursor-pointer">
                       {resources.menu.signIn}
                     </NavLink>

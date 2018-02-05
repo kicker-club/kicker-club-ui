@@ -12,7 +12,7 @@ import {
 import * as actionCreators from 'actions';
 import resources from 'resources';
 
-export class Header extends React.Component {
+export class Header extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -32,7 +32,7 @@ export class Header extends React.Component {
             <NavItem>
               <NavLink
                 role="button"
-                onClick={this.props.switchSignIn}
+                onClick={this.props.toggleSignInForm}
                 className="cursor-pointer">{resources.menu.signIn}</NavLink>
             </NavItem>
           </Nav>

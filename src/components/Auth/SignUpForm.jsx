@@ -11,7 +11,7 @@ import {
 import * as actionCreators from 'actions';
 import resources from 'resources';
 
-export class SignUpForm extends React.Component {
+export class SignUpForm extends React.PureComponent {
   constructor(props) {
     super(props);
   }

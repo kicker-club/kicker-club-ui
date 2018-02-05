@@ -32,7 +32,7 @@ export class LandingPage extends React.Component {
           <UncontrolledCarousel items={resources.carouselImages} />
           <TournamentTypes />
           <Button
-            onClick={this.props.switchSignUp}
+            onClick={this.props.toggleSignUpForm}
             color="primary"
             className="d-block mx-auto mb-5 btn-lg">
             {resources.signUp}

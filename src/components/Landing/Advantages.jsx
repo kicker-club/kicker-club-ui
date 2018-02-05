@@ -14,7 +14,7 @@ import {
 import * as actionCreators from 'actions';
 import resources from 'resources';
 
-export class Advantages extends React.Component {
+export class Advantages extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -42,7 +42,7 @@ export class Advantages extends React.Component {
             <CardBody>
               <CardTitle>{resources.advantages.accessToTournamentCard.title}</CardTitle>
               <CardText>{resources.advantages.accessToTournamentCard.description}</CardText>
-              <Button onClick={this.props.switchSignUp}>{resources.signUp}</Button>
+              <Button onClick={this.props.toggleSignUpForm}>{resources.signUp}</Button>
             </CardBody>
           </Card>
         </CardDeck>

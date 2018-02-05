@@ -11,7 +11,7 @@ import {
 import * as actionCreators from 'actions';
 import resources from 'resources';
 
-export default class TournamentTypes extends React.Component {
+export default class TournamentTypes extends React.PureComponent {
   constructor(props) {
     super(props);
   }

@@ -8,7 +8,7 @@ chai.use(chaiImmutable);
 
 describe('authReducer', () => {
   const action = {
-    type: 'SWITCH_SIGNUP'
+    type: 'TOGGLE_SIGN_UP_FORM'
   };
 
   it('should switch signup to true', () => {

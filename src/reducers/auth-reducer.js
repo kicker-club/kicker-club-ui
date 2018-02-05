@@ -4,22 +4,46 @@ import * as actions from '../action-creator';
 
 const initialState = Map({
   signUpIsOpened: false,
+  subscribeToNews: true,
+
   signInIsOpened: false,
-  rememberMe: false,
-  subscribeToNews: false
+  email: '',
+  password: '',
+  rememberMe: false
 });
 
 export default handleActions({
-  [actions.switchSignUp](state) {
-    return state.set('signUpIsOpened', !state.get('signUpIsOpened'))
-  },
-  [actions.switchSignIn](state) {
-    return state.set('signInIsOpened', !state.get('signInIsOpened'))
-  },
-  [actions.clickRememberMe](state) {
-    return state.set('rememberMe', !state.get('rememberMe'))
+  [actions.toggleSignUpForm](state) {
+    return state.set('signUpIsOpened', !state.get('signUpIsOpened'));
   },
   [actions.clickSubscribeToNews](state) {
-    return state.set('subscribeToNews', !state.get('subscribeToNews'))
+    return state.set('subscribeToNews', !state.get('subscribeToNews'));
+  },
+
+  // Maybe it's neeeded create a separate reducer.
+  [actions.signIn](state) {
+    const email = state.get('email');
+    const password = state.get('password');
+    if (email === 'win@win.win' && password === '12345') { // TODO: Stub.
+      // Show additional fields.
+      console.log('SUCCESS');
+    }
+    return state.set('signInIsOpened', !state.get('signInIsOpened'));
+  },
+  [actions.toggleSignInForm](state) {
+    return state
+      .set('email', '')
+      .set('password', '')
+      .set('rememberMe', false)
+      .set('signInIsOpened', !state.get('signInIsOpened'));
+  },
+  [actions.changeEmail](state, action) {
+    return state.set('email', action.payload);
+  },
+  [actions.changePassword](state, action) {
+    return state.set('password', action.payload);
+  },
+  [actions.changeRememberMe](state) {
+    return state.set('rememberMe', !state.get('rememberMe'))
   }
 }, initialState);

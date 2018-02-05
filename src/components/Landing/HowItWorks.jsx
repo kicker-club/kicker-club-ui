@@ -3,7 +3,7 @@ import { Jumbotron } from 'reactstrap';
 
 import resources from 'resources';
 
-export default class HowItWorks extends React.Component {
+export default class HowItWorks extends React.PureComponent {
   constructor(props) {
     super(props);
   }

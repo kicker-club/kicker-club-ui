@@ -5,7 +5,7 @@ import { Jumbotron, Button } from 'reactstrap';
 import * as actionCreators from 'actions';
 import resources from 'resources';
 
-export class Introduction extends React.Component {
+export class Introduction extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -17,7 +17,7 @@ export class Introduction extends React.Component {
         <p className="lead">{resources.intro.largeDescription}</p>
         <p>{resources.intro.smallDescription}</p>
         <p className="lead">
-          <Button onClick={this.props.switchSignUp} color="primary btn-lg">{resources.signUp}</Button>
+          <Button onClick={this.props.toggleSignUpForm} color="primary btn-lg">{resources.signUp}</Button>
         </p>
       </Jumbotron>
     );
