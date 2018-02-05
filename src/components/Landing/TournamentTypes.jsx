@@ -7,7 +7,9 @@ import {
   Row,
   Col
 } from 'reactstrap';
-import resources from '../../resources';
+
+import * as actionCreators from 'actions';
+import resources from 'resources';
 
 export default class TournamentTypes extends React.Component {
   constructor(props) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron } from 'reactstrap';
-import resources from '../../resources';
+
+import resources from 'resources';
 
 export default class HowItWorks extends React.Component {
   constructor(props) {

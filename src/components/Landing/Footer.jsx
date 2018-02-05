@@ -12,8 +12,8 @@ import {
   Col
 } from 'reactstrap';
 
-import * as actionCreators from '../../action-creator';
-import resources from '../../resources';
+import * as actionCreators from 'actions';
+import resources from 'resources';
 
 export class Footer extends React.Component {
   constructor(props) {

@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Jumbotron, Button } from 'reactstrap';
 
-import resources from '../../resources';
-import * as actionCreators from '../../action-creator';
+import * as actionCreators from 'actions';
+import resources from 'resources';
 
 export class Introduction extends React.Component {
   constructor(props) {

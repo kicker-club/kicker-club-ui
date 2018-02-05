@@ -11,8 +11,8 @@ import Footer from './Landing/Footer';
 import SignUpModal from './Auth/SignUpModal';
 import SignInModal from './Auth/SignInModal';
 
-import * as actionCreators from '../action-creator';
-import resources from '../resources';
+import * as actionCreators from 'actions';
+import resources from 'resources';
 
 export class LandingPage extends React.Component {
   constructor(props) {

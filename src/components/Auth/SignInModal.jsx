@@ -9,8 +9,8 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import * as actionCreators from '../../action-creator';
-import resources from '../../resources';
+import * as actionCreators from 'actions';
+import resources from 'resources';
 import SignInForm from './SignInForm';
 
 const propTypes = {

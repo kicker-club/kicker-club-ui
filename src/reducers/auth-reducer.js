@@ -1,4 +1,6 @@
 import { Map } from 'immutable';
+import { handleActions } from 'redux-actions';
+import * as actions from '../action-creator';
 
 const initialState = Map({
   signUpIsOpened: false,
@@ -7,24 +9,17 @@ const initialState = Map({
   subscribeToNews: false
 });
 
-function authReducer(state = initialState, action) {
-  switch (action.type) {
-    // Here we can call the files containing business logic.
-    case 'SWITCH_SIGNUP':
-      const signUpIsOpened = state.get('signUpIsOpened');
-      return state.set('signUpIsOpened', !signUpIsOpened)
-    case 'SWITCH_SIGNIN':
-      const signInIsOpened = state.get('signInIsOpened');
-      return state.set('signInIsOpened', !signInIsOpened)
-    case 'CLICK_REMEMBER_ME':
-      const rememberMe = state.get('rememberMe');
-      return state.set('rememberMe', !rememberMe);
-    case 'CLICK_SUBSCRIBE_TO_NEWS':
-      const subscribeToNews = state.get('subscribeToNews');
-      return state.set('subscribeToNews', !subscribeToNews);
+export default handleActions({
+  [actions.switchSignUp](state) {
+    return state.set('signUpIsOpened', !state.get('signUpIsOpened'))
+  },
+  [actions.switchSignIn](state) {
+    return state.set('signInIsOpened', !state.get('signInIsOpened'))
+  },
+  [actions.clickRememberMe](state) {
+    return state.set('rememberMe', !state.get('rememberMe'))
+  },
+  [actions.clickSubscribeToNews](state) {
+    return state.set('subscribeToNews', !state.get('subscribeToNews'))
   }
-
-  return state;
-}
-
-export default authReducer;
+}, initialState);

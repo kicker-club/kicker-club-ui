@@ -3,9 +3,9 @@ import { renderIntoDocument } from 'react-dom/test-utils';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import React from 'react';
 
-import { LandingPage } from './../../src/components/LandingPage';
-import Header from './../../src/components/Landing/Header';
-import Footer from './../../src/components/Landing/Footer';
+import { LandingPage } from 'components/LandingPage';
+import Header from 'components/Landing/Header';
+import Footer from 'components/Landing/Footer';
 
 const should = chai.should();
 

@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
 import { Map } from 'immutable';
-import authReducer from './../../src/reducers/auth-reducer';
+import authReducer from 'reducers/auth-reducer';
 
 const should = chai.should();
 chai.use(chaiImmutable);

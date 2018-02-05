@@ -1,3 +1,5 @@
+const path = require('path');
+
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MergeFilesPlugin = require('merge-files-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -13,7 +15,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
+    alias: {
+      actions: path.resolve(__dirname, 'src/action-creator.js'),
+      components: path.resolve(__dirname, 'src/components/'),
+      reducers: path.resolve(__dirname, 'src/reducers/'),
+      resources: path.resolve(__dirname, 'src/resources.js')
+    }
   },
   module: {
     rules: [{
@@ -46,5 +54,6 @@ module.exports = {
     contentBase: './dist'
   },
   // TODO: Don't include source maps if production
+  // Or use cheap-module-eval-source-map
   devtool: 'eval-source-map'
 };

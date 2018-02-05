@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import authReducer from './reducers/auth-reducer';
-import KickerApp from './components/KickerApp';
-import LandingPage from './components/LandingPage';
+import authReducer from 'reducers/auth-reducer';
+import KickerApp from 'components/KickerApp';
+import LandingPage from 'components/LandingPage';
 
 import '../styles/bootstrap-flatly-theme.min.css';
 import '../styles/main.less';
