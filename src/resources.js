@@ -1,6 +1,7 @@
 export default {
   title: "Kicker Club",
   signUp: "Зарегистрироваться",
+  signIn: "Войти",
   cancel: "Отмена",
   menu: {
     home: "Главная",
@@ -72,6 +73,12 @@ export default {
     email: 'Адрес электронной почты',
     password: 'Пароль',
     repeatPassword: 'Повторите пароль',
-    subscribeToNews: 'Подписаться на новости о новой функциональности'
+    subscribeToNews: 'Подписаться на анонсы о новой функциональности'
+  },
+  signInForm: {
+    title: 'Вход',
+    email: 'Email',
+    password: 'Пароль',
+    rememberMe: 'Запомнить меня'
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Form,
   FormGroup,
@@ -6,9 +7,11 @@ import {
   Input,
   FormText
 } from 'reactstrap';
-import resources from '../resources';
 
-export default class SignUpForm extends React.Component {
+import * as actionCreators from '../../action-creator';
+import resources from '../../resources';
+
+export class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -38,7 +41,10 @@ export default class SignUpForm extends React.Component {
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="checkbox" />
+            <Input
+              type="checkbox"
+              checked={this.props.subscribeToNews}
+              onChange={this.props.clickSubscribeToNews} />
             {resources.signUpForm.subscribeToNews}
           </Label>
         </FormGroup>
@@ -46,3 +52,10 @@ export default class SignUpForm extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const subscribeToNews = state.authReducer.get('subscribeToNews');
+  return { subscribeToNews };
+}
+
+export default connect(mapStateToProps, actionCreators)(SignUpForm);

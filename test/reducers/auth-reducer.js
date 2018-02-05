@@ -1,12 +1,12 @@
 import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
 import { Map } from 'immutable';
-import signUpReducer from './../../src/reducers/signup-reducer';
+import authReducer from './../../src/reducers/auth-reducer';
 
 const should = chai.should();
 chai.use(chaiImmutable);
 
-describe('singUpReducer', () => {
+describe('authReducer', () => {
   const action = {
     type: 'SWITCH_SIGNUP'
   };
@@ -16,7 +16,7 @@ describe('singUpReducer', () => {
       signUpIsOpened: false
     });
 
-    const newState = signUpReducer(initialState, action);
+    const newState = authReducer(initialState, action);
     newState.should.equal(Map({
       signUpIsOpened: true
     }));
@@ -27,7 +27,7 @@ describe('singUpReducer', () => {
       signUpIsOpened: true
     });
 
-    const newState = signUpReducer(initialState, action);
+    const newState = authReducer(initialState, action);
     newState.should.equal(Map({
       signUpIsOpened: false
     }));

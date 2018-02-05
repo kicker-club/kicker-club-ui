@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Collapse,
   Navbar,
@@ -7,9 +8,11 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+
+import * as actionCreators from '../../action-creator';
 import resources from '../../resources';
 
-export default class Header extends React.Component {
+export class Header extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -27,7 +30,10 @@ export default class Header extends React.Component {
               <NavLink href="/contacts">{resources.menu.contacts}</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/app">{resources.menu.signIn}</NavLink>
+              <NavLink
+                role="button"
+                onClick={this.props.switchSignIn}
+                className="cursor-pointer">{resources.menu.signIn}</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
@@ -35,3 +41,5 @@ export default class Header extends React.Component {
     );
   }
 }
+
+export default connect(null, actionCreators)(Header);

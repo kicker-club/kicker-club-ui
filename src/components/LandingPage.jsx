@@ -2,14 +2,16 @@ import React from 'react';
 import { UncontrolledCarousel, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../action-creator';
 import Header from './Landing/Header';
 import Introduction from './Landing/Introduction';
 import HowItWorks from './Landing/HowItWorks';
 import Advantages from './Landing/Advantages';
 import TournamentTypes from './Landing/TournamentTypes';
 import Footer from './Landing/Footer';
-import SignUpModal from './SignUpModal';
+import SignUpModal from './Auth/SignUpModal';
+import SignInModal from './Auth/SignInModal';
+
+import * as actionCreators from '../action-creator';
 import resources from '../resources';
 
 export class LandingPage extends React.Component {
@@ -21,6 +23,7 @@ export class LandingPage extends React.Component {
     return (
       <div>
         <SignUpModal />
+        <SignInModal />
         <Header />
         <div className="landing-container mx-auto">
           <Introduction />

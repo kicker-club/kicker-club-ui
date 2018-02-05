@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Collapse,
   Navbar,
@@ -10,9 +11,11 @@ import {
   Row,
   Col
 } from 'reactstrap';
+
+import * as actionCreators from '../../action-creator';
 import resources from '../../resources';
 
-export default class Footer extends React.Component {
+export class Footer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -41,7 +44,12 @@ export default class Footer extends React.Component {
                     <NavLink href="/contacts">{resources.menu.contacts}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="/app">{resources.menu.signIn}</NavLink>
+                    <NavLink
+                      role="button"
+                      onClick={this.props.switchSignIn}
+                      className="cursor-pointer">
+                      {resources.menu.signIn}
+                    </NavLink>
                   </NavItem>
                 </Nav>
               </Col>
@@ -55,3 +63,5 @@ export default class Footer extends React.Component {
     );
   }
 }
+
+export default connect(null, actionCreators)(Footer);

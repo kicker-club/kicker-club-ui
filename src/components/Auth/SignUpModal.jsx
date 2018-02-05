@@ -9,8 +9,8 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import * as actionCreators from '../action-creator';
-import resources from '../resources';
+import * as actionCreators from '../../action-creator';
+import resources from '../../resources';
 import SignUpForm from './SignUpForm';
 
 const propTypes = {
@@ -47,7 +47,7 @@ export class SignUpModal extends React.Component {
 SignUpModal.propTypes = propTypes;
 
 function mapStateToProps(state) {
-  const signUpIsOpened = state.signUpReducer.get('signUpIsOpened');
+  const signUpIsOpened = state.authReducer.get('signUpIsOpened');
   return { signUpIsOpened };
 }
 
