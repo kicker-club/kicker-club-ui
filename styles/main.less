@@ -1,14 +1,21 @@
+html, body, #kicker-app {
+  height: 100%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
-.landing-container {
+.container {
+  flex-grow: 1; // Stretch the container.
   max-width: 1440px;
 
   > div {
     margin: 20px;
   }
+}
 
+.landing {
   .carousel-inner {
     background: #2C3E50;
     min-height: 357px;
@@ -50,18 +57,6 @@
 }
 
 .footer {
-  display: block;
-
-  .navbar-nav li {
-    display: inline-block;
-  }
-
-  @media screen and (max-width: 720px) {
-    .navbar-nav li {
-      display: block;
-    }
-  }
-
   .copyright {
     color: white;
     font-style: italic;

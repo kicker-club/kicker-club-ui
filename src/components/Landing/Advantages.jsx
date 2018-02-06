@@ -11,7 +11,7 @@ import {
   Button
 } from 'reactstrap';
 
-import * as actionCreators from 'actions';
+import * as actionCreators from 'action-creators';
 import resources from 'resources';
 
 export class Advantages extends React.PureComponent {
@@ -22,7 +22,7 @@ export class Advantages extends React.PureComponent {
   render() {
     return (
       <div>
-        <h1 className="text-center">{resources.advantages.title}</h1>
+        <h1 className="display-3 text-center">{resources.advantages.title}</h1>
         <CardDeck>
           <Card>
             <CardBody>

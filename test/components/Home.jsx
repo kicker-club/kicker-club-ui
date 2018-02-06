@@ -3,9 +3,9 @@ import { renderIntoDocument } from 'react-dom/test-utils';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import React from 'react';
 
-import { LandingPage } from 'components/LandingPage';
-import Header from 'components/Landing/Header';
-import Footer from 'components/Landing/Footer';
+import { Home } from 'components/Home';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const should = chai.should();
 
@@ -15,7 +15,7 @@ describe('LandingPage', () => {
   const testComponentPresence = (expected) => {
     const renderer = new ShallowRenderer();
 
-    renderer.render(<LandingPage />);
+    renderer.render(<Home />);
     const result = renderer.getRenderOutput();
 
     should.exist(result.props.children);

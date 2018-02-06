@@ -8,7 +8,7 @@ import {
   Col
 } from 'reactstrap';
 
-import * as actionCreators from 'actions';
+import * as actionCreators from 'action-creators';
 import resources from 'resources';
 
 export default class TournamentTypes extends React.PureComponent {
@@ -25,7 +25,7 @@ export default class TournamentTypes extends React.PureComponent {
 
     return (
       <div className="tournament-types">
-        <h1 className="text-center">{resources.tournamentTypes}</h1>
+        <h1 className="display-3 text-center">{resources.tournamentTypes}</h1>
         <Row>
           <Col md="4" xs="12">
             <Card>

@@ -8,7 +8,7 @@ import {
   FormText
 } from 'reactstrap';
 
-import * as actionCreators from 'actions';
+import * as actionCreators from 'action-creators';
 import resources from 'resources';
 
 export class SignUpForm extends React.PureComponent {

@@ -9,7 +9,7 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import * as actionCreators from 'actions';
+import * as actionCreators from 'action-creators';
 import resources from 'resources';
 import SignUpForm from './SignUpForm';
 

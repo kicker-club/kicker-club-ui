@@ -8,3 +8,4 @@ export const toggleSignInForm = createAction('TOGGLE_SIGN_IN_FORM');
 export const changeEmail = createAction('CHANGE_EMAIL');
 export const changePassword = createAction('CHANGE_PASSWORD');
 export const changeRememberMe = createAction('CHANGE_REMEMBER_ME');
+export const signOut = createAction('SIGN_OUT');

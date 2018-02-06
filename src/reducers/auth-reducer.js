@@ -1,12 +1,13 @@
 import { Map } from 'immutable';
 import { handleActions } from 'redux-actions';
-import * as actions from '../action-creator';
+import * as actions from 'action-creators';
 
 const initialState = Map({
   signUpIsOpened: false,
   subscribeToNews: true,
 
   signInIsOpened: false,
+  signedIn: false,
   email: '',
   password: '',
   rememberMe: false
@@ -21,14 +22,17 @@ export default handleActions({
   },
 
   // Maybe it's neeeded create a separate reducer.
-  [actions.signIn](state) {
+  [actions.signIn](state, action) {
     const email = state.get('email');
     const password = state.get('password');
-    if (email === 'win@win.win' && password === '12345') { // TODO: Stub.
-      // Show additional fields.
-      console.log('SUCCESS');
+    if (email.length > 0 && password.length > 0) {
+      const history = action.payload;
+      history.push('/app');
+      return state
+        .set('signedIn', true)
+        .set('signInIsOpened', !state.get('signInIsOpened'));
     }
-    return state.set('signInIsOpened', !state.get('signInIsOpened'));
+    return state;
   },
   [actions.toggleSignInForm](state) {
     return state
@@ -45,5 +49,10 @@ export default handleActions({
   },
   [actions.changeRememberMe](state) {
     return state.set('rememberMe', !state.get('rememberMe'))
+  },
+  [actions.signOut](state, action) {
+    const history = action.payload;
+    history.push('/');
+    return state.set('signedIn', false);
   }
 }, initialState);

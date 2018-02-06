@@ -1,28 +1,23 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import {
-  Collapse,
   Navbar,
   NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
   Button,
   Row,
   Col
 } from 'reactstrap';
 
-import * as actionCreators from 'actions';
+import Menu from './Menu';
 import resources from 'resources';
 
-export class Footer extends React.PureComponent {
+export default class Footer extends React.PureComponent {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <Navbar expand="sm" className="navbar-dark bg-primary footer">
+      <Navbar expand="sm" className="navbar-dark bg-primary footer d-block">
         <Row className="footer-content">
           <Col md="4" xs="12" className="d-flex justify-content-start align-items-center">
             <NavbarBrand href="/">{resources.title}</NavbarBrand>
@@ -36,22 +31,7 @@ export class Footer extends React.PureComponent {
           <Col md="4" className="d-flex justify-content-end align-items-center">
             <Row>
               <Col md="12" className="text-right">
-                <Nav navbar className="d-inline-block">
-                  <NavItem>
-                    <NavLink href="/">{resources.menu.home}</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="/contacts">{resources.menu.contacts}</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      role="button"
-                      onClick={this.props.toggleSignInForm}
-                      className="cursor-pointer">
-                      {resources.menu.signIn}
-                    </NavLink>
-                  </NavItem>
-                </Nav>
+                <Menu />
               </Col>
             </Row>
           </Col>
@@ -63,5 +43,3 @@ export class Footer extends React.PureComponent {
     );
   }
 }
-
-export default connect(null, actionCreators)(Footer);

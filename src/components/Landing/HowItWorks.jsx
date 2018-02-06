@@ -11,7 +11,7 @@ export default class HowItWorks extends React.PureComponent {
   render() {
     return (
       <div>
-        <h1 className="text-center">{resources.howItWorks.title}</h1>
+        <h1 className="display-3 text-center">{resources.howItWorks.title}</h1>
         <Jumbotron>
           <p className="lead">{resources.howItWorks.description}</p>
         </Jumbotron>

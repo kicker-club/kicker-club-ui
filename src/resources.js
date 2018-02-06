@@ -6,7 +6,8 @@ export default {
   menu: {
     home: "Главная",
     contacts: "Контакты",
-    signIn: "Войти"
+    signIn: "Войти",
+    signOut: "Выйти"
   },
   intro: {
     title: "Создайте свой кикерный клуб!",
