@@ -21,7 +21,7 @@ export default handleActions({
     return state.set('subscribeToNews', !state.get('subscribeToNews'));
   },
 
-  // Maybe it's neeeded create a separate reducer.
+  // Maybe it's neeeded to create a separate reducer.
   [actions.signIn](state, action) {
     const email = state.get('email');
     const password = state.get('password');

@@ -1,39 +1,24 @@
-import chai from 'chai';
-import { renderIntoDocument } from 'react-dom/test-utils';
-import ShallowRenderer from 'react-test-renderer/shallow';
 import React from 'react';
+import chai from 'chai';
+import {
+  Simulate,
+  scryRenderedDOMComponentsWithTag
+} from 'react-dom/test-utils';
 
-import { Home } from 'components/Home';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import { createMockedStore, renderConnectedComponent } from '../test-utils';
+import ConnectedHome, { Home } from 'components/Home';
 
 const should = chai.should();
 
-// We don't have to setup fake DOM because we use Phantom.
-// Shallow renderer doesn't require DOM at all.
-describe('LandingPage', () => {
-  const testComponentPresence = (expected) => {
-    const renderer = new ShallowRenderer();
+describe('Home', () => {
+  it('should show sign up form after click on the last button', () => {
+    const store = createMockedStore();
+    const renderedComponent = renderConnectedComponent(ConnectedHome, store);
+    const buttons = scryRenderedDOMComponentsWithTag(renderedComponent, 'button');
 
-    renderer.render(<Home />);
-    const result = renderer.getRenderOutput();
+    Simulate.click(buttons[buttons.length - 1]);
 
-    should.exist(result.props.children);
-    should.exist(result.props.children[3]);
-    should.equal(result.props.children[3].props.children, expected.props.children);
-    should.equal(result.props.children[3].props.type, expected.props.type);
-  };
-
-  // Now there is connected component.
-  xit('should render footer', () => {
-    testComponentPresence(<Footer />);
+    const action = store.getActions()[0];
+    action.type.should.equal('TOGGLE_SIGN_UP_FORM');
   });
-
-  // Now there is connected component.
-  xit('should render header', () => {
-    testComponentPresence(<Header />);
-  });
-
-  // TODO: It's needed to pass a store to test connected LandingPage and use redux-mock-store.
-  it('should test output in connected Landing page');
 });

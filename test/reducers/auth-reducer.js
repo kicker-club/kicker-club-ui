@@ -7,29 +7,46 @@ const should = chai.should();
 chai.use(chaiImmutable);
 
 describe('authReducer', () => {
-  const action = {
-    type: 'TOGGLE_SIGN_UP_FORM'
-  };
+  describe('sign up', () => {
+    function testSignUp(initialValue) {
+      const action = {
+        type: 'TOGGLE_SIGN_UP_FORM'
+      };
 
-  it('should switch signup to true', () => {
-    const initialState = Map({
-      signUpIsOpened: false
+      const initialState = Map({
+        signUpIsOpened: initialValue
+      });
+
+      const newState = authReducer(initialState, action);
+      newState.should.equal(Map({
+        signUpIsOpened: !initialValue
+      }));
+    }
+
+    it('should toggle signup to true', () => {
+      testSignUp(false);
     });
 
-    const newState = authReducer(initialState, action);
-    newState.should.equal(Map({
-      signUpIsOpened: true
-    }));
+    it('should toggle signup to false', () => {
+      testSignUp(true);
+    });
   });
 
-  it('should switch signup to false', () => {
-    const initialState = Map({
-      signUpIsOpened: true
-    });
+  describe('sign out', () => {
+    it('should sign out', () => {
+      const history = [];
+      const action = {
+        type: 'SIGN_OUT',
+        payload: history
+      };
+      const initialState = Map({
+        signedIn: true
+      });
 
-    const newState = authReducer(initialState, action);
-    newState.should.equal(Map({
-      signUpIsOpened: false
-    }));
+      const newState = authReducer(initialState, action);
+
+      newState.should.equal(Map({ signedIn: false }));
+      history.should.include('/');
+    });
   });
 });
