@@ -10,9 +10,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import SignInAs from './SignInAs';
+import SignInForm from './SignInForm';
 import * as actionCreators from 'action-creators';
 import resources from 'resources';
-import SignInForm from './SignInForm';
 
 const propTypes = {
   signInIsOpened: PropTypes.bool.isRequired,
@@ -34,6 +35,7 @@ export class SignInModal extends React.PureComponent {
           size="lg">
           <ModalHeader toggle={this.props.toggleSignInForm}>{resources.signInForm.title}</ModalHeader>
           <ModalBody>
+            <SignInAs />
             <SignInForm />
           </ModalBody>
           <ModalFooter>
