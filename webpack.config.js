@@ -41,8 +41,8 @@ module.exports = {
     extractCSS,
     extractLess,
     new CleanWebpackPlugin(['dist'], {
-      exclude: ['index.html'],
-      dry: true // TODO: false, if production. Exclude other dist files.
+      exclude: ['index.html', 'img'],
+      dry: false
     }),
     new MergeFilesPlugin({
       filename: 'bundle.css',
