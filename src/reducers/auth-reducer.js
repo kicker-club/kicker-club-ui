@@ -10,7 +10,12 @@ const initialState = Map({
   signedIn: false,
   email: '',
   password: '',
-  rememberMe: false
+  rememberMe: false,
+
+  isPlayerRole: false,
+
+  clubName: '',
+  clubPassword: ''
 });
 
 export default handleActions({
@@ -34,7 +39,7 @@ export default handleActions({
     }
     return state;
   },
-  [actions.toggleSignInForm](state) {
+  [actions.toggleSignInFormVisibility](state) {
     return state
       .set('email', '')
       .set('password', '')
@@ -54,5 +59,16 @@ export default handleActions({
     const history = action.payload;
     history.push('/');
     return state.set('signedIn', false);
+  },
+
+  [actions.changeRole](state) {
+    return state.set('isPlayerRole', !state.get('isPlayerRole'));
+  },
+
+  [actions.changeClubName](state, action) {
+    return state.set('clubName', action.payload);
+  },
+  [actions.changeClubPassword](state, action) {
+    return state.set('clubPassword', action.payload);
   }
 }, initialState);

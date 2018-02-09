@@ -21,7 +21,7 @@ const propTypes = {
   changeRememberMe: PropTypes.func.isRequired
 };
 
-export class SignInForm extends React.PureComponent {
+export class SignInAsAdminForm extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -66,7 +66,7 @@ export class SignInForm extends React.PureComponent {
   }
 }
 
-SignInForm.propTypes = propTypes;
+SignInAsAdminForm.propTypes = propTypes;
 
 function mapStateToProps(state) {
   const rememberMe = state.authReducer.get('rememberMe');
@@ -75,4 +75,4 @@ function mapStateToProps(state) {
   return { rememberMe, email, password };
 }
 
-export default connect(mapStateToProps, actionCreators)(SignInForm);
+export default connect(mapStateToProps, actionCreators)(SignInAsAdminForm);
