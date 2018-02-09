@@ -17,10 +17,11 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      'action-creators': path.resolve(__dirname, 'src/action-creator.js'),
+      'action-creators': path.resolve(__dirname, 'src/action-creators.js'),
       components: path.resolve(__dirname, 'src/components/'),
       reducers: path.resolve(__dirname, 'src/reducers/'),
-      resources: path.resolve(__dirname, 'src/resources.js')
+      resources: path.resolve(__dirname, 'src/resources.js'),
+      consts: path.resolve(__dirname, 'src/consts.js'),
     }
   },
   module: {
@@ -42,7 +43,7 @@ module.exports = {
     extractLess,
     new CleanWebpackPlugin(['dist'], {
       exclude: ['index.html', 'img'],
-      dry: false
+      dry: true // TODO: False if production.
     }),
     new MergeFilesPlugin({
       filename: 'bundle.css',

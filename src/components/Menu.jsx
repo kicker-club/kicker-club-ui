@@ -22,7 +22,7 @@ export class Menu extends React.PureComponent {
       <NavItem>
         <NavLink
           role="button"
-          onClick={this.props.toggleSignInFormVisibility}
+          onClick={this.props.showSignInForm}
           className="cursor-pointer">
           {resources.menu.signIn}
         </NavLink>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Col,
   Button,
   FormGroup,
   Label,
@@ -43,7 +44,7 @@ export class SignInAs extends React.PureComponent {
     return (
       <FormGroup row>
         <Label sm={2} for="switch">Войти как</Label>
-        <div className="col center-outer">
+        <Col sm={10} className="align-self-center">
           <Switch
             onChange={this.props.changeRole}
             checked={this.props.isPlayerRole}
@@ -54,9 +55,8 @@ export class SignInAs extends React.PureComponent {
             offColor="#18BC9C"
             width={90}
             height={35}
-            id="switch"
-            className="center-inner"/>
-        </div>
+            id="switch"/>
+        </Col>
       </FormGroup>
     );
   }

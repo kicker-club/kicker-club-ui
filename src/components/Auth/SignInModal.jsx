@@ -17,9 +17,10 @@ import * as actionCreators from 'action-creators';
 import resources from 'resources';
 
 const propTypes = {
-  signInIsOpened: PropTypes.bool.isRequired,
+  signInFormIsShown: PropTypes.bool.isRequired,
   signIn: PropTypes.func.isRequired,
-  toggleSignInFormVisibility: PropTypes.func.isRequired
+  showSignInForm: PropTypes.func.isRequired,
+  hideSignInForm: PropTypes.func.isRequired
 };
 
 export class SignInModal extends React.PureComponent {
@@ -31,10 +32,10 @@ export class SignInModal extends React.PureComponent {
     return (
       <div>
         <Modal
-          isOpen={this.props.signInIsOpened}
-          toggle={this.props.toggleSignInFormVisibility}
+          isOpen={this.props.signInFormIsShown}
+          toggle={this.props.hideSignInForm}
           size="lg">
-          <ModalHeader toggle={this.props.toggleSignInFormVisibility}>
+          <ModalHeader toggle={this.props.hideSignInForm}>
             {resources.signInForm.title}
           </ModalHeader>
           <ModalBody>
@@ -45,7 +46,7 @@ export class SignInModal extends React.PureComponent {
             <Button color="primary" onClick={() => this.props.signIn(this.props.history)}>
               {resources.signIn}
             </Button>
-            <Button color="secondary" onClick={this.props.toggleSignInFormVisibility}>
+            <Button color="secondary" onClick={this.props.hideSignInForm}>
               {resources.cancel}
             </Button>
           </ModalFooter>
@@ -58,9 +59,9 @@ export class SignInModal extends React.PureComponent {
 SignInModal.propTypes = propTypes;
 
 function mapStateToProps(state) {
-  const signInIsOpened = state.authReducer.get('signInIsOpened');
+  const signInFormIsShown = state.authReducer.get('signInFormIsShown');
   const isPlayerRole = state.authReducer.get('isPlayerRole');
-  return { signInIsOpened, isPlayerRole };
+  return { signInFormIsShown, isPlayerRole };
 }
 
 export default withRouter(connect(mapStateToProps, actionCreators)(SignInModal));

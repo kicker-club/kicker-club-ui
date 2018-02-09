@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actionCreators from 'action-creators';
 import resources from 'resources';
 
-export class KickerApp extends React.PureComponent {
+export class Dashboard extends React.PureComponent {
   constructor(props) {
     super(props);
   }
@@ -12,10 +12,10 @@ export class KickerApp extends React.PureComponent {
   render() {
     return (
       <div className="container mx-auto">
-        <p className="lead">Здесь будут невиданные фичи!</p>
+        <p className="lead">Ниасилили</p>
       </div>
     );
   }
 }
 
-export default connect(null, actionCreators)(KickerApp);
+export default connect(null, actionCreators)(Dashboard);

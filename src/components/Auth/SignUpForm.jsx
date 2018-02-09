@@ -7,9 +7,15 @@ import {
   Input,
   FormText
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 import * as actionCreators from 'action-creators';
 import resources from 'resources';
+
+const propTypes = {
+  subscribeToNews: PropTypes.bool.isRequired,
+  clickSubscribeToNews: PropTypes.func.isRequired
+};
 
 export class SignUpForm extends React.PureComponent {
   constructor(props) {
@@ -52,6 +58,8 @@ export class SignUpForm extends React.PureComponent {
     );
   }
 }
+
+SignUpForm.propTypes = propTypes;
 
 function mapStateToProps(state) {
   const subscribeToNews = state.authReducer.get('subscribeToNews');

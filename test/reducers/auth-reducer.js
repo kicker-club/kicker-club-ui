@@ -2,6 +2,7 @@ import chai from 'chai';
 import chaiImmutable from 'chai-immutable';
 import { Map } from 'immutable';
 import authReducer from 'reducers/auth-reducer';
+import { routes } from 'consts';
 
 const should = chai.should();
 chai.use(chaiImmutable);
@@ -45,8 +46,16 @@ describe('authReducer', () => {
 
       const newState = authReducer(initialState, action);
 
-      newState.should.equal(Map({ signedIn: false }));
-      history.should.include('/');
+      newState.should.equal(Map({
+        signedIn: false,
+        email: '',
+        password: '',
+        clubName: '',
+        clubPassword: '',
+        rememberMe: false,
+        signInFormIsShown: false
+      }));
+      history.should.include(routes.root);
     });
   });
 });

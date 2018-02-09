@@ -1,18 +1,19 @@
 import { Map } from 'immutable';
 import { handleActions } from 'redux-actions';
+import { routes } from 'consts';
 import * as actions from 'action-creators';
 
 const initialState = Map({
   signUpIsOpened: false,
   subscribeToNews: true,
 
-  signInIsOpened: false,
+  signInFormIsShown: false,
   signedIn: false,
   email: '',
   password: '',
   rememberMe: false,
 
-  isPlayerRole: false,
+  isPlayerRole: true,
 
   clubName: '',
   clubPassword: ''
@@ -28,23 +29,31 @@ export default handleActions({
 
   // Maybe it's neeeded to create a separate reducer.
   [actions.signIn](state, action) {
+    const isPlayerRole = state.get('isPlayerRole');
     const email = state.get('email');
     const password = state.get('password');
-    if (email.length > 0 && password.length > 0) {
+    const clubName = state.get('clubName');
+    const clubPassword = state.get('clubPassword');
+
+    const canSignIn = isPlayerRole
+      ? clubName.length && clubPassword.length
+      : email.length && password.length;
+
+    if (canSignIn) {
       const history = action.payload;
-      history.push('/app');
+      history.push(routes.dashboard);
       return state
         .set('signedIn', true)
-        .set('signInIsOpened', !state.get('signInIsOpened'));
+        .set('signInFormIsShown', !state.get('signInFormIsShown'));
     }
+
     return state;
   },
-  [actions.toggleSignInFormVisibility](state) {
-    return state
-      .set('email', '')
-      .set('password', '')
-      .set('rememberMe', false)
-      .set('signInIsOpened', !state.get('signInIsOpened'));
+  [actions.showSignInForm](state) {
+    return state.set('signInFormIsShown', true);
+  },
+  [actions.hideSignInForm](state) {
+    return cleanSignInData(state);
   },
   [actions.changeEmail](state, action) {
     return state.set('email', action.payload);
@@ -57,8 +66,8 @@ export default handleActions({
   },
   [actions.signOut](state, action) {
     const history = action.payload;
-    history.push('/');
-    return state.set('signedIn', false);
+    history.push(routes.root);
+    return cleanSignInData(state.set('signedIn', false));
   },
 
   [actions.changeRole](state) {
@@ -72,3 +81,14 @@ export default handleActions({
     return state.set('clubPassword', action.payload);
   }
 }, initialState);
+
+
+function cleanSignInData(state) {
+  return state
+      .set('email', '')
+      .set('password', '')
+      .set('clubName', '')
+      .set('clubPassword', '')
+      .set('rememberMe', false)
+      .set('signInFormIsShown', false);
+}

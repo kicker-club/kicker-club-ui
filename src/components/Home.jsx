@@ -7,12 +7,21 @@ import HowItWorks from './Landing/HowItWorks';
 import Advantages from './Landing/Advantages';
 import TournamentTypes from './Landing/TournamentTypes';
 
+import { routes } from 'consts';
 import * as actionCreators from 'action-creators';
 import resources from 'resources';
 
 export class Home extends React.PureComponent {
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
+    const location = this.props.location;
+    const fromPath = location && location.state && location.state.from.pathname;
+    if (fromPath == routes.dashboard) {
+      this.props.showSignInForm();
+    }
   }
 
   render() {

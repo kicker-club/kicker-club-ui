@@ -27,7 +27,7 @@ describe('Menu', () => {
     Simulate.click(link);
 
     const action = store.getActions()[0];
-    action.type.should.equal('TOGGLE_SIGN_IN_FORM_VISIBILITY');
+    action.type.should.equal('SHOW_SIGN_IN_FORM');
   });
 
   it('should sign out after click on \'Sign Out\'', () => {
