@@ -8,7 +8,7 @@ import {
   Col
 } from 'reactstrap';
 
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 export default class TournamentTypes extends React.PureComponent {

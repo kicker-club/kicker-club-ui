@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Jumbotron, Button } from 'reactstrap';
 
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 export class Introduction extends React.PureComponent {

@@ -9,7 +9,7 @@ import {
   Col
 } from 'reactstrap';
 
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 const propTypes = {

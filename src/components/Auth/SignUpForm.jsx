@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 const propTypes = {

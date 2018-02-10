@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import SignInAs from './SignInAs';
 import SignInAsPlayerForm from './SignInAsPlayerForm';
 import SignInAsAdminForm from './SignInAsAdminForm';
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 const propTypes = {

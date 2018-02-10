@@ -10,7 +10,7 @@ import {
   NavLink
 } from 'reactstrap';
 
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 export class Menu extends React.PureComponent {
@@ -75,7 +75,7 @@ export class Menu extends React.PureComponent {
   }
 }
 
-Menu.PropTypes = {
+Menu.propTypes = {
   signedIn: PropTypes.bool.isRequired,
   isPlayerRole: PropTypes.bool.isRequired
 };

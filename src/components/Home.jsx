@@ -8,7 +8,7 @@ import Advantages from './Landing/Advantages';
 import TournamentTypes from './Landing/TournamentTypes';
 
 import { routes } from 'consts';
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 export class Home extends React.PureComponent {

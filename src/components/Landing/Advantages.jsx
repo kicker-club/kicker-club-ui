@@ -11,7 +11,7 @@ import {
   Button
 } from 'reactstrap';
 
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 export class Advantages extends React.PureComponent {

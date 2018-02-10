@@ -1,7 +1,7 @@
 import { Map } from 'immutable';
 import { handleActions } from 'redux-actions';
 import { routes } from 'consts';
-import * as actions from 'action-creators';
+import * as actions from 'action-creators/auth';
 
 const initialState = Map({
   signUpIsOpened: false,

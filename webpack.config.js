@@ -17,7 +17,7 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      'action-creators': path.resolve(__dirname, 'src/action-creators.js'),
+      'action-creators': path.resolve(__dirname, 'src/action-creators/'),
       components: path.resolve(__dirname, 'src/components/'),
       reducers: path.resolve(__dirname, 'src/reducers/'),
       resources: path.resolve(__dirname, 'src/resources.js'),

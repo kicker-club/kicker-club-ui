@@ -8,7 +8,7 @@ import {
 
 import { createMockedStore, renderConnectedComponent } from '../test-utils';
 import ConnectedMenu, { Menu } from 'components/Menu';
-import { signIn } from 'action-creators';
+import { signIn } from 'action-creators/auth';
 import resources from 'resources';
 
 const should = chai.should();

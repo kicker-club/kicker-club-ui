@@ -11,7 +11,7 @@ import SignUpModal from './Auth/SignUpModal';
 import SignInModal from './Auth/SignInModal';
 
 import { routes } from 'consts';
-import * as actionCreators from 'action-creators';
+import * as actionCreators from 'action-creators/auth';
 import resources from 'resources';
 
 export class Master extends React.PureComponent {

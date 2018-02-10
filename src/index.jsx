@@ -6,14 +6,15 @@ import { Provider } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
 
 import authReducer from 'reducers/auth-reducer';
+import menuReducer from 'reducers/menu-reducer';
 import Demo from 'components/Demo';
 import Master from 'components/Master';
 
-import '../styles/bootstrap-flatly-theme.min.css';
-import '../styles/main.less';
+import '../styles/index.less';
 
 const rootReducer = combineReducers({
-  authReducer
+  authReducer,
+  menuReducer,
 });
 
 const store = createStore(rootReducer);
