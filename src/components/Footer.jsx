@@ -31,7 +31,7 @@ export default class Footer extends React.PureComponent {
           <Col md="4" className="d-flex justify-content-end align-items-center">
             <Row>
               <Col md="12" className="text-right">
-                <Menu />
+                <Menu showRoleSpecificItems={false} />
               </Col>
             </Row>
           </Col>
