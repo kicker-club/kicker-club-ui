@@ -7,6 +7,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const extractCSS = new ExtractTextPlugin('stylesheets/css-bundle.css');
 const extractLess = new ExtractTextPlugin('stylesheets/less-bundle.css');
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: ['babel-polyfill', './src/index.jsx'],
   output: {
@@ -32,10 +34,17 @@ module.exports = {
     }, {
       test: /\.less$/,
       loader: extractLess.extract(['css-loader', 'less-loader']),
-      // TODO: minify css, if production
     }, {
       test: /\.css$/,
-      loader: extractCSS.extract("css-loader?url=false"),
+      loader: extractCSS.extract({
+        use: [{
+          loader: 'css-loader',
+          options: {
+            url: false,
+            minimize: isProduction
+          }
+        }]
+      }),
     }]
   },
   plugins: [
@@ -43,7 +52,7 @@ module.exports = {
     extractLess,
     new CleanWebpackPlugin(['dist'], {
       exclude: ['index.html', 'img'],
-      dry: true // TODO: False if production.
+      dry: !isProduction
     }),
     new MergeFilesPlugin({
       filename: 'bundle.css',
@@ -54,7 +63,7 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
-  // TODO: Don't include source maps if production
-  // Or use cheap-module-eval-source-map
-  devtool: 'eval-source-map'
+  devtool: isProduction
+    ? false
+    : 'eval-source-map' // Or cheap-module-eval-source-map.
 };
