@@ -8,9 +8,7 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server",
     "test": "karma start karma.conf.js",
-    "test-chrome": "karma start karma.conf.js --no-single-run --browsers Chrome",
-    "old-way-karma": "webpack --config webpack.config.test.js && karma start karma.conf.js",
-    "old-way-mocha": "node node_modules/mocha/bin/mocha --require babel-core/register --reporter nyan \"test/**/*.@(js|jsx)\""
+    "test-chrome": "karma start karma.conf.js --no-single-run --browsers Chrome"
   },
   "keywords": [],
   "author": "",

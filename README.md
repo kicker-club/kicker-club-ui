@@ -9,6 +9,6 @@ Run in Chrome: `npm run test-chrome`
 
 # Troubleshooting
 
-Make sure you have `webpack`, `webpack-dev-server` and `karma-cli` installed globally:
+Make sure you have `webpack` and `webpack-dev-server` installed globally:
 
-`npm i -g webpack webpack-dev-server karma-cli`
+`npm i -g webpack webpack-dev-server`
