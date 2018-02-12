@@ -34,6 +34,8 @@ export class Master extends React.PureComponent {
                   state: { from: this.props.location }
                 }} />
           }
+          { /* TODO: Replace by specific component if there is no match. */ }
+          <Route component={Home} />
         </Switch>
         <Footer />
         <SignUpModal />
